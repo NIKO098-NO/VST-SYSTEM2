@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scan Staff ID</title>
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<h1>Scan Staff ID</h1>
+<input type="text" id="staffID" placeholder="Enter Staff ID">
+<button onclick="scan()">Scan</button>
+<p id="result"></p>
+<script>
+const staffDB = {"1001":"Alice","1002":"Bob","1003":"Charlie"};
+function scan(){
+  const id = document.getElementById("staffID").value;
+  const res = document.getElementById("result");
+  if(staffDB[id]){
+    res.innerText = "Valid ID: " + staffDB[id];
+  } else {
+    res.innerText = "Invalid ID ❌";
+  }
+}
+</script>
+</body>
+</html>
